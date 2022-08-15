@@ -16,8 +16,9 @@
             <div id="logo"> Banco Digital
                 <div id="logo-img"><img src="img/bit_logo.png" alt=""></div>
             </div>
+
             <div id="agencia"> Agência: 0001 Conta: 123456789</div>
-                <div id="exit"><i class="fa-solid fa-person-walking-arrow-right"></i> Sair </div>
+            <div id="exit"><i class="fa-solid fa-person-walking-arrow-right"></i> Sair </div>
         </header>
         <h1>Olá, Paulo</h1>
         <div id="saldo">
@@ -31,11 +32,15 @@
                         <p>Valor da fatura: <br>3000,00₿</p>
                         <p>Vencimento da fatura: <br>25/12/2022</p>
                     </div>
-                    <div id="extrato"><p>transferencia aprovada no valor de 1000,00₿</p></div>
+                    <div id="extrato">
+                        <p>transferencia aprovada no valor de 1000,00₿</p>
+                    </div>
                 </div>
-                <div id="limite"><p>Limite disponivel: 5000,00₿</p></div>
+                <div id="limite">
+                    <p>Limite disponivel: 5000,00₿</p>
+                </div>
                 <div id="servicos_container">
-                    <button id="pix">Area pix</button>
+                    <a href="#area_pix"></a><button id="pix">Area pix</button></a>
                     <button id="boleto">Pagar boleto</button>
                     <button id="qr_code">Qr code</button>
                     <button id="recarga">Recarga de celular</button>
@@ -61,6 +66,42 @@
             </section>
             <section id="banner"></section>
         </main>
+        <section id="area_pix">
+            <div id="fechar"><button id="fechar-area-pix">X</button></div>
+            <div id="pix-opcoes">
+                <h2>Área Pix</h2>
+                <p>Envie e receba pagamentos a qualquer hora do dia e semana, sem pagar nada por isso</p>
+                <span></span>
+                <h3>Enviar</h3>
+                <ul>
+                    <li><i class="fa-solid fa-money-bill-transfer"></i> Transferir</li>
+                    <li><i class="fa-brands fa-pix"></i><br> Pix copia e Cola</li>
+                    <li><i class="fa-solid fa-qrcode"></i><br> Ler QR code</li>
+                </ul>
+                <span></span>
+                <h3>Receber</h3>
+                <ul>
+                    <li><i class="fa-solid fa-comments-dollar"></i><br> Cobrar</li>
+                    <li><i class="fa-solid fa-sack-dollar"></i><br> Depositar</li>
+                </ul>
+            </div>
+            <div id="transferir">
+                <form>
+                    <p>Qual é o valor da transferência?</p>
+                    <input type="number"><br>
+                    <p>Para quem você quer transferir?</p>
+                    <input placeholder="Nome, CPF/CNPJ ou chave Pix">
+                    <p>Detalhes da transferência </p>
+                   <input type="text" placeholder="Escrever uma mensagem"><i class="fa-solid fa-comment-dots"></i>
+                </form>
+                <div id="informacoes-transferencia">
+                    <p>Data de pagamento <span>data</span></p>
+                    <p>Saindo da <span>conta corrente</span></p>
+                    <p>tipo <span>Pix</span></p>
+                    <span>Após a confirmação essa transação não poderá ser cancelada</span>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="js/scripts.js"></script>
 </body>
