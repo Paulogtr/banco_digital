@@ -4,7 +4,6 @@ const transferir = document.querySelector('.fa-money-bill-transfer')
 const areapix = document.querySelector('#area_pix');
 const abrirAreaPix = document.querySelector('#pix');
 
-
 // função para exibir o saldo do cliente 
 verSaldo.addEventListener('click', function () {
     const saldo = document.querySelector('#valor');
@@ -26,6 +25,12 @@ transferir.addEventListener('click', function(){
     areaDeTransferencia.style.display = 'none'
 }
 })
+
+//btn confirmar transferencia
+const confirmarTransferncia = document.querySelector("#btn-confirmar-transferencia")
+const transferenciaCheck = document.querySelector('#transferenciaCheck')
+
+confirmarTransferncia.addEventListener('click',() => transferenciaCheck.style.display = 'block')
 
 //abrir area pix
 abrirAreaPix.addEventListener('click', () => areapix.style.display = 'flex')

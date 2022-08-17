@@ -74,11 +74,10 @@
                 <span></span>
                 <h3>Enviar</h3>
                 <ul>
-                    <li><i class="fa-solid fa-money-bill-transfer"></i> Transferir</li>
+                    <li><i class="fa-solid fa-money-bill-transfer"></i><br>Transferir</li>
                     <li><i class="fa-brands fa-pix"></i><br> Pix copia e Cola</li>
                     <li><i class="fa-solid fa-qrcode"></i><br> Ler QR code</li>
                 </ul>
-                <span></span>
                 <h3>Receber</h3>
                 <ul>
                     <li><i class="fa-solid fa-comments-dollar"></i><br> Cobrar</li>
@@ -86,20 +85,24 @@
                 </ul>
             </div>
             <div id="transferir">
-                <form>
-                    <p>Qual é o valor da transferência?</p>
-                    <input type="number"><br>
-                    <p>Para quem você quer transferir?</p>
-                    <input placeholder="Nome, CPF/CNPJ ou chave Pix">
-                    <p>Detalhes da transferência </p>
-                   <input type="text" placeholder="Escrever uma mensagem"><i class="fa-solid fa-comment-dots"></i>
-                </form>
-                <div id="informacoes-transferencia">
-                    <p>Data de pagamento <span>data</span></p>
-                    <p>Saindo da <span>conta corrente</span></p>
-                    <p>tipo <span>Pix</span></p>
-                    <span>Após a confirmação essa transação não poderá ser cancelada</span>
+                <div id="transferirSub">
+                    <form>
+                        <p>Qual é o valor da transferência?</p>
+                        <input type="number"><br>
+                        <p>Para quem você quer transferir?</p>
+                        <input placeholder="Nome, CPF/CNPJ ou chave Pix">
+                        <p>Detalhes da transferência </p>
+                       <input type="text" placeholder="Escrever uma mensagem"><i class="fa-solid fa-comment-dots"></i>
+                    </form>
+                    <div id="informacoes-transferencia">
+                        <p>Data de pagamento <span id="data">data</span></p>
+                        <p>Saindo da <span>conta corrente</span></p>
+                        <p>tipo <span>Pix</span></p>
+                        <span><p>Após a confirmação essa transação não poderá ser cancelada</p></span>
+                    </div>
+                    <button id="btn-confirmar-transferencia">Confirmar Transferência</button>
                 </div>
+                <div id="transferenciaCheck"><i class="fa-solid fa-check"></i><br>Transferencia Realizada</div>
             </div>
         </section>
     </div>
