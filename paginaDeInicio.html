@@ -12,25 +12,27 @@
 
 <body>
     <div id="container">
+        <!--Cabeçalho do site-->
         <header>
             <div id="logo"> Banco Digital
                 <div id="logo-img"><img src="img/bit_logo.png" alt=""></div>
             </div>
-
             <div id="agencia"> Agência: 0001 Conta: 123456789</div>
             <div id="exit"><i class="fa-solid fa-person-walking-arrow-right"></i> Sair </div>
         </header>
         <h1>Olá, Paulo</h1>
         <div id="saldo">
             <button id="verSaldo"><i class="fa-solid fa-chevron-down"></i></button> Saldo de conta corrente:
-            <p id="valor"><strong>1000,00₿</strong></p>
+            <p class="valor"><strong>1000,00₿</strong></p>
         </div>
+         <!--Parte principal do site-->
         <main>
-            <section id="dados_servicos">
-                <div id="dados_container">
-                    <div id="info_fatura">
+             <!--primeira section-->
+            <section id="dados-servicos">
+                <div id="dados-container">
+                    <div id="info-fatura">
                         <p>Valor da fatura: <br>3000,00₿</p>
-                        <p>Vencimento da fatura: <br>25/12/2022</p>
+                        <p>Vencimento da fatura: <br><span class="data">Hoje, </span></p>
                     </div>
                     <div id="extrato">
                         <p>transferencia aprovada no valor de 1000,00₿</p>
@@ -39,14 +41,15 @@
                 <div id="limite">
                     <p>Limite disponivel: 5000,00₿</p>
                 </div>
+                 <!--primeiras opções de serviços-->
                 <div id="servicos_container">
-                    <a href="#area_pix"></a><button id="pix">Area pix</button></a>
+                    <button id="pix">Area pix</button></a>
                     <button id="boleto">Pagar boleto</button>
                     <button id="qr_code">Qr code</button>
                     <button id="recarga">Recarga de celular</button>
                 </div>
             </section>
-
+             <!--Area bem vindo (mais-serviços)-->
             <section id="bemVindo-container">
                 <div id="bemVindo">
                     <div>
@@ -58,16 +61,18 @@
                     <input type="search" placeholder="O que você quer fazer?">
                     <span></span>
                 </div>
-                <div id="demais_servicos">
+                <div id="demais-servicos">
                     <a href="#"><i class="fa-solid fa-money-bill-trend-up"></i><br>Investimentos</a>
                     <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i><br>Empréstimos e Financiamentos</a>
                     <a href="#"><i class="fa-solid fa-magnifying-glass-dollar"></i><br>Outros Produtos</a>
                 </div>
             </section>
+             <!--Banner de outros projetos-->
             <section id="banner"></section>
         </main>
-        <section id="area_pix">
-            <div id="fechar"><button id="fechar-area-pix">X</button></div>
+         <!--aba para realizar trasnferencia via pix-->
+        <section id="area-pix" class="container-transacoes">
+            <div class="fechar"><button class="btn-fechar-transacoes">X</button></div>
             <div id="pix-opcoes">
                 <h2>Área Pix</h2>
                 <p>Envie e receba pagamentos a qualquer hora do dia e semana, sem pagar nada por isso</p>
@@ -84,6 +89,7 @@
                     <li><i class="fa-solid fa-sack-dollar"></i><br> Depositar</li>
                 </ul>
             </div>
+             <!--Area de transferência-->
             <div id="transferir">
                 <div id="transferirSub">
                     <form>
@@ -95,7 +101,7 @@
                        <input type="text" placeholder="Escrever uma mensagem"><i class="fa-solid fa-comment-dots"></i>
                     </form>
                     <div id="informacoes-transferencia">
-                        <p>Data de pagamento <span id="data">data</span></p>
+                        <p>Data de pagamento <span class="data">Hoje, </span></p>
                         <p>Saindo da <span>conta corrente</span></p>
                         <p>tipo <span>Pix</span></p>
                         <span><p>Após a confirmação essa transação não poderá ser cancelada</p></span>
@@ -105,8 +111,83 @@
                 <div id="transferenciaCheck"><i class="fa-solid fa-check"></i><br>Transferencia Realizada</div>
             </div>
         </section>
+         <!--Area para pagamento de boletos-->
+         <section id="area-boletos" class="container-transacoes">
+            <div class="fechar"><button class="btn-fechar-transacoes">X</button></div>
+            <ul id="boletos-opcoes">    
+            <h2>Pagamento de boletos</h2>
+                <li><a href="#">Pagar fatura do cartão</a></li>
+                <li><a href="#">Pagar conta de água</a></li>
+                <li><a href="#">Pagar fatura de luz</a></li>
+                <li><a href="#">Pagar fatura de internet</a></li>
+                <li><a href="#">Boletos de cobrança</a></li>
+                <li><a href="#">IPTU/ ISS</a></li>
+                <li><a href="#">Simples Nacional</a></li>
+            </ul>
+            <div class="container-pagamento">
+                <div id="pagar-cartao">
+                    <h3>Fatura fechada</h3>
+                    <p class="valor-fatura">₿ 3000,00</p><br>
+                    <p>Data de Vencimento: <span class="data"></span></p>
+                    <p>Melhor data para suas compras:</p><br>
+                    <p><input type="checkbox" id="pagar-hoje" checked required> Pagar hoje</p>
+                    <p><input type="checkbox" id="agendar-pagamento" disabled> Agendar pagamento para: <input type="date" disabled></p>
+                    <button class="pagar">Pagar</button> <button class="parcelar">Parcelar</button>
+                    <h3>Extrato</h3>
+                    <div id="extrato-cartao">
+                        <ul id="extrato-especificacao">
+                            <li>Data</li>
+                            <li>Descrição</li>
+                            <li>Valor</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Mercado livre</li>
+                            <li>29,99</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul>
+                        <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul> <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul> <ul class="compras">
+                            <li>17/jul</li>
+                            <li>Americanas</li>
+                            <li>29,99</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </section>
     </div>
     <script src="js/scripts.js"></script>
 </body>
-
 </html>
