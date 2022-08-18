@@ -23,7 +23,7 @@
         <h1>Olá, Paulo</h1>
         <div id="saldo">
             <button id="verSaldo"><i class="fa-solid fa-chevron-down"></i></button> Saldo de conta corrente:
-            <p class="valor"><strong>1000,00₿</strong></p>
+            <p class="valor hide"><strong>₿1000,00</strong></p>
         </div>
          <!--Parte principal do site-->
         <main>
@@ -31,15 +31,15 @@
             <section id="dados-servicos">
                 <div id="dados-container">
                     <div id="info-fatura">
-                        <p>Valor da fatura: <br>3000,00₿</p>
+                        <p>Valor da fatura: <br>₿3000,00</p>
                         <p>Vencimento da fatura: <br><span class="data">Hoje, </span></p>
                     </div>
                     <div id="extrato">
-                        <p>transferencia aprovada no valor de 1000,00₿</p>
+                        <p>transferencia aprovada no valor de ₿1000,00</p>
                     </div>
                 </div>
                 <div id="limite">
-                    <p>Limite disponivel: 5000,00₿</p>
+                    <p>Limite disponivel: ₿5000,00</p>
                 </div>
                  <!--primeiras opções de serviços-->
                 <div id="servicos_container">
@@ -116,16 +116,17 @@
             <div class="fechar"><button class="btn-fechar-transacoes">X</button></div>
             <ul id="boletos-opcoes">    
             <h2>Pagamento de boletos</h2>
-                <li><a href="#">Pagar fatura do cartão</a></li>
-                <li><a href="#">Pagar conta de água</a></li>
-                <li><a href="#">Pagar fatura de luz</a></li>
-                <li><a href="#">Pagar fatura de internet</a></li>
-                <li><a href="#">Boletos de cobrança</a></li>
-                <li><a href="#">IPTU/ ISS</a></li>
-                <li><a href="#">Simples Nacional</a></li>
+                <li> <p id="fatura-cartao">Pagar fatura do cartão</p></li>
+                <li><p id="conta-agua">Pagar conta de água</p></li>
+                <li><p>Pagar fatura de luz</p></li>
+                <li><p>Pagar fatura de internet</p></li>
+                <li><p>Boletos de cobrança</p></li>
+                <li><p>IPTU/ ISS</p></li>
+                <li><p>Simples Nacional</p></li>
             </ul>
             <div class="container-pagamento">
-                <div id="pagar-cartao">
+                <!--Pagar fatura do cartão-->
+                <div id="pagar-cartao" class="hide">
                     <h3>Fatura fechada</h3>
                     <p class="valor-fatura">₿ 3000,00</p><br>
                     <p>Data de Vencimento: <span class="data"></span></p>
@@ -138,7 +139,7 @@
                         <ul id="extrato-especificacao">
                             <li>Data</li>
                             <li>Descrição</li>
-                            <li>Valor</li>
+                            <li>Valor ₿</li>
                         </ul>
                         <ul class="compras">
                             <li>17/jul</li>
@@ -184,6 +185,50 @@
                             <li>29,99</li>
                         </ul>
                     </div>
+                </div>
+                <!--Pagar conta de agua-->
+                <div id="pagar-conta-agua" class="hide">
+                    <h3>Conta de água</h3>
+                    <table>
+                        <tr class="color">
+                            <td>Status</td>
+                            <td>Vencimento</td>
+                            <td>Valor Total</td>
+                            <td>Forma de pagamento</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="pagar-conta-agua"> Em Aberto</td>
+                            <td>30/09</td>
+                            <td>90,00</td>
+                            <td>conta corrente</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="pagar-conta-agua"> Em aberto</td>
+                            <td>30/08</td>
+                            <td>90,00</td>
+                            <td>conta corrente</td>
+                        </tr>
+                        <tr>
+                            <td>Paga</td>
+                            <td>30/09</td>
+                            <td>90,00</td>
+                            <td>conta corrente</td>
+                        </tr>
+                        <tr>
+                            <td>Paga</td>
+                            <td>30/09</td>
+                            <td>90,00</td>
+                            <td>conta corrente</td>
+                        </tr>
+                        <tr>
+                            <td>Paga</td>
+                            <td>30/09</td>
+                            <td>90,00</td>
+                            <td>conta corrente</td>
+                        </tr>
+                    </table>
+                    <p>*Selecione a fatura para efetuar o pagamento</p>
+                    <button class="pagar">Pagar</button> <button class="parcelar">Parcelar</button>
                 </div>
             </div>
          </section>

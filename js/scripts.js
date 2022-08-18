@@ -5,31 +5,38 @@ class InicioBanco {
     // função para exibir o saldo do cliente 
     verSaldo() {
         const mostrarSaldo = document.querySelector('#verSaldo');
-        mostrarSaldo.addEventListener('click', function () {
-            const saldo = document.querySelector('.valor');
-
-            if (saldo.style.display == 'none') {
-                saldo.style.display = 'block';
-            } else {
-                saldo.style.display = 'none';
-            }
-        })
+        const saldo = document.querySelector('.valor');
+        mostrarSaldo.addEventListener('click', () => saldo.classList.toggle('hide'))
     }
 
     //abrir area pix
-    btnAbrirAreaPix() {
+    btnAbrirServicos() {
         const areapix = document.querySelector('#area-pix');
         const abrirAreaPix = document.querySelector('#pix');
         const areaBoletos = document.querySelector('#area-boletos')
         const abrirAreaBoletos = document.querySelector('#boleto');
 
-        abrirAreaPix.addEventListener('click', () => areapix.style.display = 'flex');
+        // abrirAreaPix.addEventListener('click', () => areapix.style.display = 'flex');
+        abrirAreaPix.addEventListener('click', function(){
+            if(areaBoletos.style.display == 'flex'){
+                areaBoletos.style.display = 'none';
+                areapix.style.display = 'flex'
+            }else{
+                areapix.style.display = 'flex'
+            }
+        })
         
-        abrirAreaBoletos.addEventListener('click', () => areaBoletos.style.display = 'flex');
-
+        abrirAreaBoletos.addEventListener('click', function(){
+            if(areapix.style.display == 'flex'){
+                areapix.style.display = 'none';
+                areaBoletos.style.display = 'flex'
+            }else{
+                areaBoletos.style.display = 'flex'
+            }
+        })
     }
      //botao de encerrar area de transacoes
-    btnFecharAreaPix() {
+    btnFecharServicos() {
         const fechartransacoes = document.querySelectorAll('.btn-fechar-transacoes');
         fechartransacoes.forEach((fechar) =>
         fechar.addEventListener('click', () => containerTransacoes.forEach((fechar2)=>
@@ -43,14 +50,14 @@ class InicioBanco {
         transferir.addEventListener('click', function () {
             const areaDeTransferencia = document.querySelector('#transferir');
 
-            if (areaDeTransferencia.style.display == 'none') {
+            if (areaDeTransferencia.style.display === 'none') {
                 areaDeTransferencia.style.display = 'block';
             } else {
                 areaDeTransferencia.style.display = 'none';
             }
         })
     }
-
+    //retorna a fatura paga com um display check
     btnConfirmarTransf() {
         const confirmarTransferncia = document.querySelector("#btn-confirmar-transferencia")
         const transferenciaCheck = document.querySelector('#transferenciaCheck')
@@ -59,6 +66,31 @@ class InicioBanco {
 
     }
 
+    pagarContas(){
+        const faturaDoCartao = document.getElementById('fatura-cartao');
+        const contaAgua = document.getElementById('conta-agua');
+        const pagarCartao = document.getElementById('pagar-cartao')
+        const pagarContaAgua = document.getElementById('pagar-conta-agua')
+
+        faturaDoCartao.addEventListener('click', function(){
+            if(pagarContaAgua.classList === ('hide')){
+                pagarCartao.classList.toggle('hide')
+            }else{
+                pagarContaAgua.classList.add('hide')
+                pagarCartao.classList.toggle('hide')
+            }
+        })
+
+        contaAgua.addEventListener('click', function(){
+            if(pagarCartao.classList === ('hide')){
+                pagarContaAgua.classList.toggle('hide')
+            }else{
+                pagarCartao.classList.add('hide')
+                pagarContaAgua.classList.toggle('hide')
+            }
+        })
+    }
+    //pega a data atual e lança no vencimento da fatura
     dataAtual(){
         const date = new Date()
         
@@ -78,8 +110,9 @@ class InicioBanco {
 let cliente = new InicioBanco();
 //cahamada dos metodos
 cliente.verSaldo();
-cliente.btnAbrirAreaPix();
-cliente.btnFecharAreaPix();
+cliente.btnAbrirServicos();
+cliente.btnFecharServicos();
 cliente.transferencia();
 cliente.btnConfirmarTransf();
 cliente.dataAtual();
+cliente.pagarContas();
