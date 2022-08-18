@@ -52,6 +52,10 @@ header{
     text-align: end;
 }
 
+.hide{
+    display: none;
+}
+
 #saldo{
     width: 32.3%;
     background-color: #ffffff;
@@ -229,7 +233,7 @@ main{
 /* estilização da area pix*/
 
 #area-pix,#area-boletos{
-    display: flex;
+    /* display: flex;  */
     position: relative;
     margin-top: 40px;
     margin-left: 10px;
@@ -238,11 +242,7 @@ main{
     height: 100vh;
     box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.336);
     border-radius: 10px;
-     display: none;  
-}
-
-#area-boletos{
-    display: flex; 
+    display: none;
 }
 
 .fechar{
@@ -385,9 +385,6 @@ main{
 
 /* estilização da area de boletos*/
 
-/* #area-boletos{
-   
-} */
 
 #area-boletos h2{
     margin-bottom: 40px;
@@ -405,15 +402,16 @@ main{
     margin-bottom: 10px;
 }
 
-#boletos-opcoes li a{
+#boletos-opcoes li p{
     color: rgb(14, 3, 180);
+    cursor: pointer;
 }
 
-#boletos-opcoes li a:hover{
+#boletos-opcoes li p:hover{
     text-decoration: underline;
 }
 
-/* estilização link pagar fatura do cartão*/
+/* estilização da area pagar fatura do cartão*/
 
 #pagar-cartao{
     margin-top: 50px;
@@ -454,10 +452,46 @@ main{
     list-style: none;
 }
 
-#extrato-especificacao{
-    position: sticky;
-}
-
 .compras{
   background-color: #fff;
 }
+
+/*estilização da area pagar conta de agua*/
+#pagar-conta-agua{
+    margin-top: 40px;
+    margin-left: 2px;
+}
+
+#pagar-conta-agua h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#pagar-conta-agua table{
+    width: 98%;
+    margin:auto auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#pagar-conta-agua table tr td{
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid;
+}
+
+#pagar-conta-agua .color{
+    background-color: #0d9408;
+    font-weight: bold;
+}
+
+#pagar-conta-agua p{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#pagar-conta-agua .pagar{
+    margin-left: 20px;
+}
+
+
