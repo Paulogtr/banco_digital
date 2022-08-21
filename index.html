@@ -32,10 +32,10 @@
                 <div id="dados-container">
                     <div id="info-fatura">
                         <p>Valor da fatura: <br>₿3000,00</p>
-                        <p>Vencimento da fatura: <br><span class="data">Hoje, </span></p>
+                        <p>Vencimento da fatura: <br><span class="data">Hoje,</span></p>
                     </div>
                     <div id="extrato">
-                        <p>transferencia aprovada no valor de ₿1000,00</p>
+                        <p>*transferencia aprovada no valor de ₿1000,00</p>
                     </div>
                 </div>
                 <div id="limite">
@@ -43,10 +43,10 @@
                 </div>
                  <!--primeiras opções de serviços-->
                 <div id="servicos_container">
-                    <button id="pix">Area pix</button></a>
-                    <button id="boleto">Pagar boleto</button>
-                    <button id="qr_code">Qr code</button>
-                    <button id="recarga">Recarga de celular</button>
+                    <button id="pix"><i class="fa-brands fa-pix"></i><br>Área Pix</button></a>
+                    <button id="boleto"><i class="fa-solid fa-barcode"></i><br>Boletos</p></button>
+                    <button id="qr_code"><i class="fa-solid fa-arrow-right-arrow-left"></i><br>Transferir</button>
+                    <button id="recarga"><i class="fa-solid fa-mobile-screen-button"></i><br>Recarga de celular</button>
                 </div>
             </section>
              <!--Area bem vindo (mais-serviços)-->
@@ -61,14 +61,21 @@
                     <input type="search" placeholder="O que você quer fazer?">
                     <span></span>
                 </div>
-                <div id="demais-servicos">
+                <div class="demais-servicos">
                     <a href="#"><i class="fa-solid fa-money-bill-trend-up"></i><br>Investimentos</a>
-                    <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i><br>Empréstimos e Financiamentos</a>
+                    <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i><br>Empréstimos <br> e Financiamentos</a>
                     <a href="#"><i class="fa-solid fa-magnifying-glass-dollar"></i><br>Outros Produtos</a>
+                </div>
+                <div class="demais-servicos">
+                    <a href="#"><i class="fa-solid fa-people-group"></i><br>Fgts e INSS</a>
+                    <a href="#"><i class="fa-solid fa-coins"></i><br>Crédito</a>
+                    <a href="#"><i class="fa-solid fa-credit-card"></i><br>Cartões e mais</a>
                 </div>
             </section>
              <!--Banner de outros projetos-->
-            <section id="banner"></section>
+            <section id="banner">
+                <img src="img/propaganda.jpeg" alt="propaganda">
+            </section>
         </main>
          <!--aba para realizar trasnferencia via pix-->
         <section id="area-pix" class="container-transacoes">
@@ -90,7 +97,7 @@
                 </ul>
             </div>
              <!--Area de transferência-->
-            <div id="transferir">
+            <div id="transferir" class="hide">
                 <div id="transferirSub">
                     <form>
                         <p>Qual é o valor da transferência?</p>
@@ -108,7 +115,7 @@
                     </div>
                     <button id="btn-confirmar-transferencia">Confirmar Transferência</button>
                 </div>
-                <div id="transferenciaCheck"><i class="fa-solid fa-check"></i><br>Transferencia Realizada</div>
+                <div id="transferenciaCheck" class="hide"><i class="fa-solid fa-check"></i><br>Transferencia Realizada</div>
             </div>
         </section>
          <!--Area para pagamento de boletos-->

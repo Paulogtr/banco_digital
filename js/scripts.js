@@ -17,91 +17,87 @@ class InicioBanco {
         const abrirAreaBoletos = document.querySelector('#boleto');
 
         // abrirAreaPix.addEventListener('click', () => areapix.style.display = 'flex');
-        abrirAreaPix.addEventListener('click', function(){
-            if(areaBoletos.style.display == 'flex'){
+        abrirAreaPix.addEventListener('click', function () {
+            if (areaBoletos.style.display == 'flex') {
                 areaBoletos.style.display = 'none';
                 areapix.style.display = 'flex'
-            }else{
+            } else {
                 areapix.style.display = 'flex'
             }
         })
-        
-        abrirAreaBoletos.addEventListener('click', function(){
-            if(areapix.style.display == 'flex'){
+
+        abrirAreaBoletos.addEventListener('click', function () {
+            if (areapix.style.display == 'flex') {
                 areapix.style.display = 'none';
                 areaBoletos.style.display = 'flex'
-            }else{
+            } else {
                 areaBoletos.style.display = 'flex'
             }
         })
     }
-     //botao de encerrar area de transacoes
+    //botao de encerrar area de transacoes
     btnFecharServicos() {
         const fechartransacoes = document.querySelectorAll('.btn-fechar-transacoes');
         fechartransacoes.forEach((fechar) =>
-        fechar.addEventListener('click', () => containerTransacoes.forEach((fechar2)=>
-        fechar2.style.display = 'none')  )   
+            fechar.addEventListener('click', () => containerTransacoes.forEach((fechar2) =>
+                fechar2.style.display = 'none'))
         )
     }
 
     //botao transferir
     transferencia() {
         const transferir = document.querySelector('.fa-money-bill-transfer');
+        const areaDeTransferencia = document.querySelector('#transferir');
         transferir.addEventListener('click', function () {
-            const areaDeTransferencia = document.querySelector('#transferir');
-
-            if (areaDeTransferencia.style.display === 'none') {
-                areaDeTransferencia.style.display = 'block';
-            } else {
-                areaDeTransferencia.style.display = 'none';
-            }
+            areaDeTransferencia.classList.toggle('hide')
         })
+
     }
     //retorna a fatura paga com um display check
     btnConfirmarTransf() {
-        const confirmarTransferncia = document.querySelector("#btn-confirmar-transferencia")
+        const confirmarTransferencia = document.querySelector("#btn-confirmar-transferencia")
         const transferenciaCheck = document.querySelector('#transferenciaCheck')
 
-        confirmarTransferncia.addEventListener('click', () => transferenciaCheck.style.display = 'block')
+        confirmarTransferencia.addEventListener('click', () => transferenciaCheck.classList.toggle('hide'))
 
     }
 
-    pagarContas(){
+    pagarContas() {
         const faturaDoCartao = document.getElementById('fatura-cartao');
         const contaAgua = document.getElementById('conta-agua');
         const pagarCartao = document.getElementById('pagar-cartao')
         const pagarContaAgua = document.getElementById('pagar-conta-agua')
 
-        faturaDoCartao.addEventListener('click', function(){
-            if(pagarContaAgua.classList === ('hide')){
+        faturaDoCartao.addEventListener('click', function () {
+            if (pagarContaAgua.classList === ('hide')) {
                 pagarCartao.classList.toggle('hide')
-            }else{
+            } else {
                 pagarContaAgua.classList.add('hide')
                 pagarCartao.classList.toggle('hide')
             }
         })
 
-        contaAgua.addEventListener('click', function(){
-            if(pagarCartao.classList === ('hide')){
+        contaAgua.addEventListener('click', function () {
+            if (pagarCartao.classList === ('hide')) {
                 pagarContaAgua.classList.toggle('hide')
-            }else{
+            } else {
                 pagarCartao.classList.add('hide')
                 pagarContaAgua.classList.toggle('hide')
             }
         })
     }
     //pega a data atual e lança no vencimento da fatura
-    dataAtual(){
+    dataAtual() {
         const date = new Date()
-        
+
         const dia = String(date.getDate()).padStart(2, '0');
-        const mes = String(date.getMonth() + 1).padStart(2,'0');
+        const mes = String(date.getMonth() + 1).padStart(2, '0');
         const ano = date.getFullYear()
 
-       let dataHoje = document.querySelectorAll('.data')
+        let dataHoje = document.querySelectorAll('.data')
 
-       for(let i = 0; i < dataHoje.length; i++){
-         dataHoje[i].innerText += `${dia}/${mes}/${ano}`
+        for (let i = 0; i < dataHoje.length; i++) {
+            dataHoje[i].innerText += `${dia}/${mes}/${ano}`
         }
     }
 }
