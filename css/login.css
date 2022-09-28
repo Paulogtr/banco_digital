@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'migra';
+    src: url('../font/Migra\ Extrabold\ 800.otf') format('otf');
+}
+
+#logo,#logo-login{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: migra;
+    color: #000;
+    font-size: 1.8em;
+}
+
+/*area de login*/
+#header-login{
+    color: #0d9408;
+    display: flex;
+    background-color: #f0f0f0;
+    justify-content: left;
+    font-weight: bold;
+    width: 100vw;
+    height: 9.5vh;
+    margin-bottom: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.37);
+}
+
+#logo-login{
+    margin-left: 40px;
+}
+
+#main-login{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    height: 90vh;
+    background: linear-gradient(to right,rgb(135, 250, 135),#00fc00)
+}
+
+#text-marketing{
+    width: 300px;
+    margin-left: 60px;
+}
+
+#text-marketing h1{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0px;
+}
+
+#text-marketing p{
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+}
+
+#main-login img{
+    margin-left: 20px;
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px;
+    width: 396px;
+    height: 315px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.479);
+}
+
+form input[type=text], input[type=password] {
+    margin: 10px auto;
+    width: 95%;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 5px;
+    font-size: 18px;
+}
+
+form input:focus{
+    outline: 0;
+    border-color:rgb(0, 140, 255) ;
+}
+
+form #logar{
+    margin: 15px auto;
+    height: 40px;
+    width: 95%;
+    border: none;
+    background-color: #0d9408;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: .7s;
+}
+
+form #logar:hover{
+    background-color: #00fc00;
+    color: #000;
+}
+
+form a {
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.534);
+}
+
+form a:hover{
+    text-decoration: underline;
+}
+
+form #criar-conta{
+    width: 50%;
+    height: 40px;
+    margin: 10px auto;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(0, 140, 255);
+}
